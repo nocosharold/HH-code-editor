@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+        <title>HH Code Editor</title>
+    </head>
+    <body>
+        <div class="split code_editor">
+            <div id="editor">function print1to20() {
+    // code here 
+}</div>
+        </div>
+        <div class="console">
+            <div class="split test_case_container">
+                Test Cases (0/1)
+                <ul>
+                    <li>
+                        <i class="fas fa-check-circle" aria-hidden="true"> </i>
+                        print1to20() to log 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+                    </li>
+                </ul>
+            </div>
+            <div class="split output_container">
+                Output
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+        <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+        <script src="https://kit.fontawesome.com/dea2b45bdd.js" crossorigin="anonymous"></script>
+        <script>
+
+            Split(['.code_editor','.console'], {
+                    gutterSize: 1,
+                    direction: 'vertical',
+                    cursor: 'row-resize',
+            })
+            Split([".test_case_container", ".output_container"], {
+                gutterSize: 1,
+                sizes: [50, 50],
+                minSize: 200,
+            });
+
+            let editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.session.setMode("ace/mode/javascript");
+            editor.setShowPrintMargin(false);
+        </script>
+    </body>
+</html>

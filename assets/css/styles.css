@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHvxk.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(https://cdn.hackerhero.com/1.1/assets/images/index/hackerhero-hexa-bg.png) 50% / cover fixed;
+  background-color: #1a1e23;
+  margin: 0;
+  height: 100vh;
+}
+.container {
+  height: 50%;
+}
+#editor {
+  background: rgba(38, 39, 37, 0.2);
+  height: 100%;
+}
+.console {
+  background: rgba(15, 15, 17, 0.2);
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: #979797;
+}
+.console .test_case_container,
+.console .output_container {
+  padding: 20px;
+  margin: 0 0 .5rem;
+  font: bold normal normal 14px/1.2 Lato;
+}
+.console ul {
+  list-style: none;
+}
+.console i {
+  margin-right: 8px;
+}
+.console li {
+  font: normal normal normal 14px/1.4 Lato;
+  flex: 1;
+  margin-top: .5rem;
+}
+.split {
+  width: 100%;
+  height: 100%;
+}
+.gutter {
+  cursor: e-resize;
+  height: 100%;
+  background: white;
+}
+.gutter.gutter-vertical:before {
+  width: 45px;
+  height: 7px;
+  background-image: url(https://cdn.hackerhero.com/1.1/assets/images/challenge/RESIZER-HORIZONTAL.png);
+  content: "";
+  display: inline-block;
+  z-index: 998;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gutter.gutter-vertical {
+  background-color: #70716d;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  position: relative;
+  z-index: 998;
+  cursor: row-resize;
+}
+.gutter.gutter-horizontal:before {
+  width: 7px;
+  height: 45px;
+  background-image: url(https://cdn.hackerhero.com/1.1/assets/images/challenge/RESIZER-VERTICAL.png);
+  content: "";
+  display: inline-block;
+  z-index: 99;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gutter.gutter-horizontal {
+  background-color: #70716d;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  position: relative;
+  z-index: 998;
+  cursor: col-resize;
+}
